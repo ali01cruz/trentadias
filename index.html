@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sin Excusas Acelereitor | Método 30 Días</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-main: #0a0a0c;
+            --bg-card: #141418;
+            --accent: #ff0050; /* Color estilo TikTok */
+            --accent-green: #25d366; /* Color WhatsApp */
+            --text-main: #ffffff;
+            --text-muted: #a0a0ab;
+            --border: #26262e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            background: radial-gradient(circle at center, #1f1a24 0%, var(--bg-main) 70%);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 0, 80, 0.15);
+            color: var(--accent);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            border: 1px solid var(--accent);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: var(--text-muted);
+            max-width: 800px;
+            margin: 0 auto 35px;
+        }
+
+        /* Botones CTA */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: var(--accent-green);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.15rem;
+            font-weight: 800;
+            padding: 18px 36px;
+            border-radius: 12px;
+            text-transform: uppercase;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            background-color: #20bd5a;
+        }
+
+        /* Filtro / Para quién es */
+        .filter-section {
+            padding: 60px 0;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .filter-box {
+            background: var(--bg-main);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid var(--border);
+        }
+
+        .filter-box h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Program Sections */
+        .program {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 900;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 50px;
+        }
+
+        .phase-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-bottom: 40px;
+            overflow: hidden;
+        }
+
+        .phase-header {
+            background: #1d1d24;
+            padding: 25px 30px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .phase-header h2 {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+
+        .phase-header span {
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .days-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .day-box {
+            background: var(--bg-main);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .day-num {
+            color: var(--accent);
+            font-weight: 900;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .day-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .day-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .day-action {
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-left: 3px solid var(--accent-green);
+            border-radius: 0 6px 6px 0;
+            color: #e0e0e0;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: radial-gradient(circle at center, #1a221e 0%, var(--bg-main) 70%);
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 800px;
+            margin: 40px auto 50px;
+        }
+
+        .price-card {
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            padding: 40px 30px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .price-card.featured {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 30px rgba(37, 211, 102, 0.15);
+        }
+
+        .price-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .price-amount {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .price-sub {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+            min-height: 40px;
+        }
+
+        /* Botón WhatsApp Flotante */
+        .wa-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--accent-green);
+            color: #fff;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+            text-decoration: none;
+            z-index: 100;
+            transition: transform 0.2s;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.1);
+        }
+
+        @media(max-width: 768px) {
+            .hero { padding: 50px 0 40px; }
+            .days-grid { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/5493884843354?text=Hola!%20Quiero%20inscribirme%20en%20Sin%20Excusas%20Acelereitor" class="wa-float" target="_blank" aria-label="Chat en WhatsApp">
+        💬
+    </a>
+
+    <section class="hero">
+        <div class="container">
+            <div class="badge">Acompañamiento Intensivo de 30 Días</div>
+            <h1>Sin Excusas <span>Acelereitor</span></h1>
+            <p>Convertí TikTok  en tu mejor vendedor con edición mínima, comunicación orgánica y sin depender de setters ni closers.</p>
+            <a href="https://wa.me/5493884843354?text=Hola!%20Quiero%20inscribirme%20en%20Sin%20Excusas%20Acelereitor" class="btn" target="_blank">
+                👉 Quiero Inscribirme Ahora
+            </a>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="container">
+            <h2 class="section-title" style="font-size: 1.8rem;">¿Este programa es para vos?</h2>
+            <div class="filter-grid">
+                <div class="filter-box">
+                    <h3>✅ ESTÁ DISEÑADO PARA:</h3>
+                    <p>Emprendedores y dueños de negocios dispuestos a dar <strong>una hora de su tiempo al día</strong> para crear un video, aparecer en cámara y aprender del mercado en tiempo real mediante estilo POV y Vlog real.</p>
+                </div>
+                <div class="filter-box" style="border-color: #ff0050;">
+                    <h3 style="color: #ff0050;">❌ NO ES PARA:</h3>
+                    <p>Personas que buscan perfección estética, ediciones complejas de agencia, o que no están dispuestas a poner la cara por su propio negocio y accionar de manera masiva todos los días.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="program">
+        <div class="container">
+            <h2 class="section-title">El Roadmap de 30 Días</h2>
+            <p class="section-subtitle">Aprenderás y aplicarás una acción fundamental cada 24 horas.</p>
+
+            <div class="phase-card">
+                <div class="phase-header">
+                    <span>Días 1 al 7</span>
+                    <h2>Fase 1: Desbloqueo y Acción</h2>
+                </div>
+                <div class="days-grid">
+                    <div class="day-box">
+                        <div class="day-num">Día 1</div>
+                        <div class="day-title">La acción supera a la perfección</div>
+                        <div class="day-desc">Un video auténtico y "crudo" genera más confianza que un anuncio publicitario.</div>
+                        <div class="day-action"><strong>Acción:</strong> Graba 30 seg hablando frente a cámara mostrando tu trabajo y publícalo hoy.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 2</div>
+                        <div class="day-title">Ingeniería Inversa</div>
+                        <div class="day-desc">El mercado ya te dice qué funciona. Identifica patrones de éxito en tu rubro.</div>
+                        <div class="day-action"><strong>Acción:</strong> Busca 3 competidores virales y anota qué dijeron en los primeros 5 segundos.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 3</div>
+                        <div class="day-title">Estilo Edición Mínima (POV)</div>
+                        <div class="day-desc">La gente entra a ver personas reales. El formato en primera persona humaniza tu marca.</div>
+                        <div class="day-action"><strong>Acción:</strong> Graba sosteniendo el celular a la altura de tus ojos preparando tu producto.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 4</div>
+                        <div class="day-title">El Filtro de los 3 Segundos</div>
+                        <div class="day-desc">Si no aclaras para quién es el video de entrada, atraes al público equivocado.</div>
+                        <div class="day-action"><strong>Acción:</strong> Nombra a tu cliente exacto apenas empiece el video con ganchos probados.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 5</div>
+                        <div class="day-title">Confianza por Repetición</div>
+                        <div class="day-desc">La confianza no es personalidad, es memoria muscular. Dominio de lenguaje corporal.</div>
+                        <div class="day-action"><strong>Acción:</strong> Grábate hablando de corrido por 2 minutos explicando tu negocio sin cortar.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 6</div>
+                        <div class="day-title">La Regla de la Simplicidad</div>
+                        <div class="day-desc">Si no lo entiende un niño de 10 años, tu comunicación es muy compleja y no vende.</div>
+                        <div class="day-action"><strong>Acción:</strong> Explica tu producto como si estuvieras tomando café con un amigo.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 7</div>
+                        <div class="day-title">Auditoría y Constancia</div>
+                        <div class="day-desc">Ignora likes de vanidad. Lectura real de métricas iniciales para saber qué replicar.</div>
+                        <div class="day-action"><strong>Acción:</strong> Evalúa los 7 videos, celebra la constancia y anota qué retuvo más.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-header">
+                    <span>Días 8 al 14</span>
+                    <h2>Fase 2: Ganchos, Retención y Neurociencia</h2>
+                </div>
+                <div class="days-grid">
+                    <div class="day-box">
+                        <div class="day-num">Día 8</div>
+                        <div class="day-title">La Fórmula Ganadora</div>
+                        <div class="day-desc">Estructura dirigida a negocio: Gancho (atención) + Valor (explicación) + Cierre (acción).</div>
+                        <div class="day-action"><strong>Acción:</strong> Aplica esta estructura de 3 pasos en tu publicación del día.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 9</div>
+                        <div class="day-title">Curiosity Gap (Brecha)</div>
+                        <div class="day-desc">La curiosidad activa la retención. Da un dato clave pero omite el final hasta el cierre.</div>
+                        <div class="day-action"><strong>Acción:</strong> Usa el título: "El error #1 al comprar [tu producto] que te hace perder plata".</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 10</div>
+                        <div class="day-title">Open Loop (Bucle Abierto)</div>
+                        <div class="day-desc">Abrir una historia y resolverla al final obliga al cerebro a mirar todo el video.</div>
+                        <div class="day-action"><strong>Acción:</strong> Empieza diciendo: "Hoy me hicieron un pedido imposible a las 8 AM, pero antes...".</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 11</div>
+                        <div class="day-title">La Paradoja (Contradicción)</div>
+                        <div class="day-desc">Decir lo opuesto a la lógica común rompe el scroll infinito y genera debate masivo.</div>
+                        <div class="day-action"><strong>Acción:</strong> Graba un gancho contradictorio (ej: "Por qué lo barato te sale el doble").</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 12</div>
+                        <div class="day-title">Contacto Visual y Postura</div>
+                        <div class="day-desc">Mirar fijo al lente (y no a la pantalla) transmite seguridad y autoridad inmediata.</div>
+                        <div class="day-action"><strong>Acción:</strong> Graba parado derecho, mirando al lente y acompañando con tus manos.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 13</div>
+                        <div class="day-title">Modulación y Ritmo</div>
+                        <div class="day-desc">El tono monótono aburre. Acelera en datos rápidos y pausa antes de lo importante.</div>
+                        <div class="day-action"><strong>Acción:</strong> Haz pausas marcadas justo antes de decir el beneficio estrella de tu producto.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 14</div>
+                        <div class="day-title">Cero Fricción de Retención</div>
+                        <div class="day-desc">Saludar con "Hola chicos" mata tu video. Los primeros 2 segundos lo son todo.</div>
+                        <div class="day-action"><strong>Acción:</strong> Ve directo al grano desde la primera palabra. Corta silencios en la edición nativa.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-header">
+                    <span>Días 15 al 21</span>
+                    <h2>Fase 3: Conversión y Venta Orgánica</h2>
+                </div>
+                <div class="days-grid">
+                    <div class="day-box">
+                        <div class="day-num">Día 15</div>
+                        <div class="day-title">Los 4 Pilares de Contenido</div>
+                        <div class="day-desc">Rotación estratégica: Educativo (enseñar), Venta (oferta), Historia (trinchera) y Opinión.</div>
+                        <div class="day-action"><strong>Acción:</strong> Graba un video enseñando un truco rápido para cuidar/usar tu producto.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 16</div>
+                        <div class="day-title">CTA Inflexible</div>
+                        <div class="day-desc">Si no das una orden clara y exacta al final de cada video, la gente simplemente deslice.</div>
+                        <div class="day-action"><strong>Acción:</strong> Cierra ordenando: "Comentá la palabra INFO y te envío los precios por privado".</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 17</div>
+                        <div class="day-title">Vender con Comentarios</div>
+                        <div class="day-desc">Responder dudas frecuentes en formato video demuestra atención y multiplica el alcance.</div>
+                        <div class="day-action"><strong>Acción:</strong> Toma la pregunta más repetida (precio/envíos) y haz un video explicándola.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 18</div>
+                        <div class="day-title">El Embudo a WhatsApp</div>
+                        <div class="day-desc">Tu perfil es un puente hacia una conversación 1 a 1, no un catálogo aburrido.</div>
+                        <div class="day-action"><strong>Acción:</strong> Coloca un enlace directo y limpio a tu WhatsApp con mensaje precargado.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 19</div>
+                        <div class="day-title">Cierre por Audio (Tu Rol)</div>
+                        <div class="day-desc">El texto frío pierde ventas. La voz transmite empatía, calidez y cierra sin closers.</div>
+                        <div class="day-action"><strong>Acción:</strong> Responde a todas las consultas de chat hoy enviando audios con energía.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 20</div>
+                        <div class="day-title">Prueba Social Orgánica</div>
+                        <div class="day-desc">Ver a otros comprando felices es el disparador de compra más potente que existe.</div>
+                        <div class="day-action"><strong>Acción:</strong> Muestra en video preparando un pedido real o una captura de cliente feliz.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 21</div>
+                        <div class="day-title">Vender el Problema</div>
+                        <div class="day-desc">La gente no compra productos, compra la solución a un dolor o molestia latente.</div>
+                        <div class="day-action"><strong>Acción:</strong> Graba enfocándote 100% en el problema/frustración de no tener tu solución.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="phase-card">
+                <div class="phase-header">
+                    <span>Días 22 al 30</span>
+                    <h2>Fase 4: Sistemas, Eficiencia y Escalamiento</h2>
+                </div>
+                <div class="days-grid">
+                    <div class="day-box">
+                        <div class="day-num">Día 22</div>
+                        <div class="day-title">Framework 3 Problemas</div>
+                        <div class="day-desc">¿Faltan clientes? ¿No vuelven? ¿O gastan poco? Ataca tu cuello de botella real.</div>
+                        <div class="day-action"><strong>Acción:</strong> Identifica tu problema principal y enfoca tus videos en resolverlo.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 23</div>
+                        <div class="day-title">Producción por Lotes</div>
+                        <div class="day-desc">Grabar un video por día agota. La eficiencia real del dueño de negocio es el batching.</div>
+                        <div class="day-action"><strong>Acción:</strong> Bloquea 2 horas, cámbiate de remera 3 veces y graba 7 videos seguidos.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 24</div>
+                        <div class="day-title">Banco Infinito de Ideas</div>
+                        <div class="day-desc">Sistematiza la recolección de dudas reales para que el bloqueo del creador desaparezca.</div>
+                        <div class="day-action"><strong>Acción:</strong> Crea una nota en tu celular y escribe 15 dudas que te hicieron clientes.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 25</div>
+                        <div class="day-title">Reciclaje Inteligente</div>
+                        <div class="day-desc">Si funcionó una vez, funcionará de nuevo. No inventes la rueda desde cero cada semana.</div>
+                        <div class="day-action"><strong>Acción:</strong> Toma tu video más exitoso y grábalo cambiando solo los primeros 3 segundos.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 26</div>
+                        <div class="day-title">Up-Selling Orgánico</div>
+                        <div class="day-desc">Es mucho más fácil venderle mayor volumen a quien ya te conoce y confía en vos.</div>
+                        <div class="day-action"><strong>Acción:</strong> Graba un video explicando por qué el combo completo ahorra tiempo y plata.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 27</div>
+                        <div class="day-title">Auditoría de Métricas</div>
+                        <div class="day-desc">Si no hay ventas, falla la oferta o el CTA. Si no hay retención, fallan tus ganchos.</div>
+                        <div class="day-action"><strong>Acción:</strong> Analiza analíticas y detecta en qué segundo exacto cae la audiencia.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 28</div>
+                        <div class="day-title">Storytelling Corto</div>
+                        <div class="day-desc">Relatos en 30-60 segundos superando obstáculos generan una conexión imbatible.</div>
+                        <div class="day-action"><strong>Acción:</strong> Cuenta en 45 segundos un error grave en tu negocio y tu aprendizaje.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 29</div>
+                        <div class="day-title">Sistemas con IA</div>
+                        <div class="day-desc">Utiliza la Inteligencia Artificial como tu asistente para redactar ganchos rápidos.</div>
+                        <div class="day-action"><strong>Acción:</strong> Pídele a una IA 10 ganchos de curiosidad (Curiosity Gap) para tu rubro.</div>
+                    </div>
+                    <div class="day-box">
+                        <div class="day-num">Día 30</div>
+                        <div class="day-title">El Plan a 90 Días</div>
+                        <div class="day-desc">La explosión de facturación llega por la acumulación de repeticiones en el trimestre.</div>
+                        <div class="day-action"><strong>Acción:</strong> Comprométete a mantener este sistema 90 días. Ya sabes vender orgánico.</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="container">
+            <div class="badge">Inversión en tu Negocio</div>
+            <h2 class="section-title">Empezá Ahora. Sin Excusas.</h2>
+            <p class="section-subtitle">Elegí la opción de pago que mejor se adapte a tu flujo de caja.</p>
+
+            <div class="pricing-grid">
+                <div class="price-card featured">
+                    <div class="price-title">Pago al Contado</div>
+                    <div class="price-amount">$200.000 <span style="font-size: 1rem; color: #a0a0ab;">ARS</span></div>
+                    <p class="price-sub">al poner una inversion al 100%  creas una motivacion que no podes fallar.</p>
+                    <a href="https://wa.me/5493884843354?text=Hola!%20Quiero%20abonar%20los%20200%20mil%20al%20contado%20para%20entrar%20al%20Sin%20Excusas%20Acelereitor" class="btn" style="width: 100%;" target="_blank">
+                        🚀 Pago al Contado
+                    </a>
+                </div>
+
+                <div class="price-card">
+                    <div class="price-title">Financiado en Cuotas</div>
+                    <div class="price-amount">10 Cuotas</div>
+                    <p class="price-sub"><strong>Inscripción: $10.000 ARS</strong><br>+ 10 cuotas semanales/diarias de $19.000 ARS (A completar antes de terminar el mes).</p>
+                    <a href="https://wa.me/5493884843354?text=Hola!%20Quiero%20entrar%20al%20Sin%20Excusas%20Acelereitor%20con%20la%20opci%C3%B3n%20de%20inscripci%C3%B3n%20y%20cuotas" class="btn" style="width: 100%; background-color: #33333d;" target="_blank">
+                        💳 Opción En Cuotas
+                    </a>
+                </div>
+            </div>
+
+            <p style="color: var(--text-muted); font-size: 0.95rem;">¿Tenés alguna duda puntual sobre el programa? <br><a href="https://wa.me/5493884843354" style="color: var(--accent-green); text-decoration: none; font-weight: 700;">Escribime directo al +54 9 388 484-3354</a></p>
+        </div>
+    </section>
+
+</body>
+</html>
